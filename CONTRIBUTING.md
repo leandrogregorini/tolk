@@ -41,6 +41,18 @@ claude --plugin-dir .       # try it live; saving a file reloads the mod
 
 The tests fail if a language file names a command or setting that doesn't exist, misses one, or drops a placeholder.
 
+## Versions and releases
+
+Claude Code only offers an update when the version in `.claude-plugin/plugin.json` changes, so every pull request bumps it. A pre-commit hook does this for you. Turn it on once per clone (needs Node):
+
+```bash
+git config core.hooksPath .githooks
+```
+
+The first commit on a branch bumps the patch version in `plugin.json` and `marketplace.json`. Later commits keep it. For a minor or major release, change the version in both files yourself and the hook leaves it alone.
+
+GitHub releases are optional and made by hand: tag the merged commit `tolk--v<version>` and create a release from the tag.
+
 ## Record the demo
 
 The README's GIF is made with [vhs](https://github.com/charmbracelet/vhs):

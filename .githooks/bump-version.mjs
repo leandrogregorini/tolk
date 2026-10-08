@@ -1,4 +1,4 @@
-import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const pluginPath = '.claude-plugin/plugin.json';
 const marketplacePath = '.claude-plugin/marketplace.json';
@@ -32,10 +32,6 @@ for (const path of [pluginPath, marketplacePath]) {
     throw new Error(`${path} does not contain exactly one ${needle}`);
   }
   writeFileSync(path, text.replace(needle, `"version": "${next}"`));
-}
-
-if (process.env.GITHUB_OUTPUT) {
-  appendFileSync(process.env.GITHUB_OUTPUT, `version=${next}\n`);
 }
 
 console.log(next);

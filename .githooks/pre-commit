@@ -1,0 +1,32 @@
+#!/bin/sh
+# Bumps the patch version in plugin.json and marketplace.json once per branch,
+# so every pull request merged into main reaches installed copies as an update.
+# The first commit whose version still matches origin/main gets the bump. Later
+# commits and amends keep it, and so does a version you changed by hand.
+set -eu
+
+plugin=.claude-plugin/plugin.json
+marketplace=.claude-plugin/marketplace.json
+
+version_at() {
+  # Git for Windows rewrites an argument that contains both ":" and "/", so
+  # "origin/main:.claude-plugin/plugin.json" reaches git as "origin\main;...".
+  MSYS_NO_PATHCONV=1 git show "$1:$plugin" 2>/dev/null |
+    node -e 'let s = ""; process.stdin.on("data", (d) => (s += d)).on("end", () => console.log(JSON.parse(s).version))'
+}
+
+git rev-parse --verify -q origin/main >/dev/null || exit 0
+
+if [ "$(version_at '')" != "$(version_at origin/main)" ]; then
+  exit 0
+fi
+
+if ! git diff --quiet -- "$plugin" "$marketplace"; then
+  echo "pre-commit: $plugin or $marketplace has unstaged changes." >&2
+  echo "Stage or stash them so the version bump doesn't commit them." >&2
+  exit 1
+fi
+
+version="$(node .githooks/bump-version.mjs)"
+git add -- "$plugin" "$marketplace"
+echo "pre-commit: bumped the version to $version"
