@@ -231,6 +231,7 @@ const NAMES: ReadonlyArray<readonly [string, readonly string[]]> = [
   ['pt-BR', ['pt', 'pt-br', 'pt_br', 'portuguese', 'português', 'portugues', 'brazilian portuguese', 'português brasileiro']],
   ['ja', ['ja', 'jp', 'japanese', '日本語', 'nihongo']],
   ['zh-CN', ['zh', 'zh-cn', 'zh_cn', 'zh-hans', 'zh-sg', 'chinese', 'simplified chinese', '中文', '简体中文', '汉语', '普通话']],
+  ['vi', ['vi', 'vietnamese', 'tiếng việt', 'tieng viet', 'việt']],
 ]
 
 /**

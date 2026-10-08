@@ -9,6 +9,7 @@ import fr from './fr'
 import it from './it'
 import ja from './ja'
 import ptBR from './pt-BR'
+import vi from './vi'
 import zhCN from './zh-CN'
 import type { Locale } from './types'
 
@@ -23,6 +24,7 @@ export const LOCALES: Readonly<Record<string, Locale>> = {
   'pt-BR': ptBR,
   ja,
   'zh-CN': zhCN,
+  vi,
 }
 
 export const CODES: readonly string[] = Object.keys(LOCALES)

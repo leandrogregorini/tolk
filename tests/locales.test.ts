@@ -62,6 +62,8 @@ describe('helpers', () => {
     expect(resolveCode('zh-Hans', CODES)).toBe('zh-CN')
     expect(resolveCode('it_IT.UTF-8', CODES)).toBe('it')
     expect(resolveCode('Italiano', CODES)).toBe('it')
+    expect(resolveCode('vi_VN.UTF-8', CODES)).toBe('vi')
+    expect(resolveCode('Tiếng Việt', CODES)).toBe('vi')
     expect(resolveCode('zh_TW.UTF-8', CODES)).toBe(undefined)
     expect(resolveCode('C.UTF-8', CODES)).toBe(undefined)
     expect(resolveCode('', CODES)).toBe(undefined)

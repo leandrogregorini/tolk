@@ -1,0 +1,144 @@
+<!doctype html>
+<!-- Source of social-preview.png (1280×640), the image GitHub shows when the
+     repo link is shared. Upload it under Settings → General → Social preview.
+     Re-render after adding a language:
+       chrome --headless=old --hide-scrollbars --force-device-scale-factor=1 \
+         --screenshot=social-preview.png --window-size=1280,640 social-preview.html
+     (the new headless mode crops the bottom ~90px of the window) -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #141413;
+    --panel: #1f1e1c;
+    --line: #34322e;
+    --text: #f0eee6;
+    --muted: #9b978c;
+    --accent: #d97757;
+    --mono: "DejaVu Sans Mono", "Noto Sans CJK JP", monospace;
+    --sans: "DejaVu Sans", "Noto Sans CJK JP", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(900px 500px at 105% 110%, rgba(217, 119, 87, 0.18), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    padding: 0 72px;
+  }
+  .left { width: 440px; flex: none; }
+  .kicker {
+    font: 600 20px var(--mono);
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+  }
+  h1 { font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .tagline { font-size: 34px; line-height: 1.25; margin-top: 22px; }
+  .tagline em { font-style: normal; color: var(--accent); }
+  .langs { font-size: 19px; line-height: 1.6; color: var(--muted); margin-top: 26px; }
+  .install {
+    margin-top: 34px;
+    display: inline-block;
+    font: 17px/1.6 var(--mono);
+    white-space: pre;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .install b { color: var(--accent); font-weight: 400; }
+
+  .term {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    font-family: var(--mono);
+  }
+  .bar { display: flex; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .bar i { width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
+  .body { padding: 20px 22px 22px; }
+  .prompt { font-size: 21px; margin-bottom: 16px; }
+  .cursor {
+    display: inline-block;
+    width: 11px;
+    height: 22px;
+    margin-left: 4px;
+    vertical-align: -4px;
+    background: var(--text);
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    line-height: 1;
+    padding: 7px 0;
+    white-space: nowrap;
+  }
+  .code {
+    flex: none;
+    width: 64px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--accent);
+    border: 1px solid rgba(217, 119, 87, 0.5);
+    border-radius: 6px;
+    padding: 5px 0;
+  }
+  .desc { overflow: hidden; text-overflow: ellipsis; }
+  .row.en .desc { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(155, 151, 140, 0.6); }
+  .row.en .code { color: var(--muted); border-color: var(--line); }
+  .via {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin: 6px 0 4px;
+  }
+  .via::after { content: ""; flex: 1; height: 1px; background: rgba(217, 119, 87, 0.35); }
+  .spin { margin-top: 12px; font-size: 18px; color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="kicker">A CLAUDE CODE MOD</div>
+    <h1>Tolk</h1>
+    <p class="tagline">Claude Code's interface, <em>in your language.</em></p>
+    <p class="langs">Deutsch · Español · Français · Italiano<br>Português · 日本語 · 简体中文 · Tiếng Việt</p>
+    <div class="install"><b>/plugin install</b> tolk \
+  --marketplace leandrogregorini/tolk
+<b>/tolk set</b> [lang]</div>
+  </div>
+
+  <div class="term">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="body">
+      <div class="prompt">&gt; /compact<span class="cursor"></span></div>
+      <div class="row en"><span class="code">en</span><span class="desc">Free up context by summarizing the conversation so far</span></div>
+      <div class="via">↓ translated by Tolk</div>
+      <div class="row"><span class="code">de</span><span class="desc">Kontext freigeben, indem die bisherige Unterhaltung zusammengefasst wird</span></div>
+      <div class="row"><span class="code">es</span><span class="desc">Liberar contexto resumiendo la conversación hasta ahora</span></div>
+      <div class="row"><span class="code">fr</span><span class="desc">Libérer du contexte en résumant la conversation jusqu’ici</span></div>
+      <div class="row"><span class="code">it</span><span class="desc">Libera contesto riassumendo la conversazione finora</span></div>
+      <div class="row"><span class="code">pt-BR</span><span class="desc">Liberar contexto resumindo a conversa até aqui</span></div>
+      <div class="row"><span class="code">ja</span><span class="desc">これまでの会話を要約してコンテキストを空ける</span></div>
+      <div class="row"><span class="code">zh-CN</span><span class="desc">总结目前的对话以释放上下文</span></div>
+      <div class="row"><span class="code">vi</span><span class="desc">Giải phóng ngữ cảnh bằng cách tóm tắt cuộc trò chuyện đến giờ</span></div>
+      <div class="spin">✻ Tüftle… · 熟考中… · 琢磨中… · Đang nghiền ngẫm…</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "tolk",
   "version": "0.1.1",
-  "description": "Claude Code's interface in your language: command list, /config, spinner, hints and turn lines. German, Spanish, French, Italian, Portuguese (BR), Japanese and Chinese.",
+  "description": "Claude Code's interface in your language: command list, /config, spinner, hints and turn lines. German, Spanish, French, Italian, Portuguese (BR), Japanese, Chinese and Vietnamese.",
   "author": {
     "name": "Leandro Gregorini"
   },
@@ -30,7 +30,8 @@
         "it",
         "pt-BR",
         "ja",
-        "zh-CN"
+        "zh-CN",
+        "vi"
       ]
     }
   },

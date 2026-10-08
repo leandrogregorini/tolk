@@ -12,7 +12,7 @@ Open the language's file in [`hooks/locales/`](hooks/locales), change the line, 
 2. Translate the strings. Leave the keys, `{placeholders}` and key bindings as they are. Each English original is in `hooks/locales/en.ts` under the same key.
 3. Import it in `hooks/locales/index.ts`, add it to `LOCALES`, and add the code to `options` under `language` in `.claude-plugin/plugin.json`.
 4. If your language has names people type for it (`Nederlands`, `한국어`), add them to `NAMES` in `hooks/translate.ts` so auto-detection finds it.
-5. Run the tests and add a row to the table in the README.
+5. Run the tests and add a row to the language table in each README (`README.md`, `README.ja.md`, `README.zh-CN.md`, `README.de.md`).
 
 A few guidelines that make a translation feel native:
 

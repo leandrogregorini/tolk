@@ -32,7 +32,7 @@ Sleep 2.5s
 Backspace 3
 
 # A short turn shows the spinner and the closing line.
-Type "Sag kurz Hallo" Enter
+Type "Stelle dich kurz vor" Enter
 Sleep 5s
 
 # And Japanese, for good measure.

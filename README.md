@@ -1,8 +1,10 @@
 # Tolk 🌍
 
+**English** · [日本語](README.ja.md) · [简体中文](README.zh-CN.md) · [Deutsch](README.de.md)
+
 **Claude Code's interface, in your language.** *(tolk = interpreter in Dutch, Swedish, Norwegian and Danish)*
 
-Claude Code auf Deutsch · Claude Code en español · Claude Code en français · Claude Code in italiano · Claude Code em português · Claude Code 日本語化 · Claude Code 汉化 / 中文界面
+Claude Code auf Deutsch · Claude Code en español · Claude Code en français · Claude Code in italiano · Claude Code em português · Claude Code 日本語化 · Claude Code 汉化 / 中文界面 · Claude Code tiếng Việt
 
 Claude already *answers* in your language. Tolk makes the rest of Claude Code follow: the command list, `/config`, the spinner, the hint line under the prompt and the line that closes each turn.
 
@@ -15,13 +17,14 @@ Claude already *answers* in your language. Tolk makes the rest of Claude Code fo
 
 | Language | Code | Commands | Settings | Reviewed by a native speaker |
 | :- | :- | :-: | :-: | :-: |
-| Deutsch | `de` | ✅ | ✅ | wanted |
+| Deutsch | `de` | ✅ | ✅ | ✅ |
 | Español | `es` | ✅ | ✅ | wanted |
 | Français | `fr` | ✅ | ✅ | wanted |
 | Italiano | `it` | ✅ | ✅ | wanted |
 | Português (Brasil) | `pt-BR` | ✅ | ✅ | wanted |
 | 日本語 | `ja` | ✅ | ✅ | wanted |
 | 简体中文 | `zh-CN` | ✅ | ✅ | wanted |
+| Tiếng Việt | `vi` | ✅ | ✅ | wanted |
 
 Your language missing? [Adding one](CONTRIBUTING.md) is a single file.
 
@@ -92,7 +95,7 @@ Claude Code **2.1.290** or later. Mods arrived in 2.1.287, but 2.1.290 fixed red
 
 ```bash
 claude plugin validate .   # what the mod hooks and calls
-claude plugin test .       # 70 tests against Claude Code's own engine
+claude plugin test .       # 75 tests against Claude Code's own engine
 claude --plugin-dir .      # try it; saving a file reloads it
 vhs demo.tape              # record demo.gif; install vhs from https://github.com/charmbracelet/vhs#installation
 ```
@@ -103,4 +106,4 @@ The first drafts of every language were written with Claude and checked against 
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
