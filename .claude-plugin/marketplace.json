@@ -1,0 +1,17 @@
+{
+  "name": "tolk",
+  "owner": {
+    "name": "Leandro Gregorini"
+  },
+  "plugins": [
+    {
+      "name": "tolk",
+      "source": "./",
+      "description": "Claude Code's interface in your language.",
+      "version": "0.1.0"
+    }
+  ],
+  "metadata": {
+    "description": "Tolk: Claude Code's interface, in your language."
+  }
+}

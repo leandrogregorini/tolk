@@ -1,0 +1,38 @@
+{
+  "name": "tolk",
+  "version": "0.1.0",
+  "description": "Claude Code's interface in your language: command list, /config, spinner, hints and turn lines. German, Spanish, French, Italian, Portuguese (BR), Japanese and Chinese.",
+  "author": {
+    "name": "Leandro Gregorini"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-code-mod",
+    "i18n",
+    "localization",
+    "l10n",
+    "translation",
+    "language"
+  ],
+  "userConfig": {
+    "language": {
+      "type": "string",
+      "title": "Interface language",
+      "description": "The language Tolk shows Claude Code's interface in. 'auto' follows your Claude Code language setting, then your system locale.",
+      "default": "auto",
+      "options": [
+        "auto",
+        "en",
+        "de",
+        "es",
+        "fr",
+        "it",
+        "pt-BR",
+        "ja",
+        "zh-CN"
+      ]
+    }
+  },
+  "displayName": "Tolk"
+}
