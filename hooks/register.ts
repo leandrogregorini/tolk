@@ -291,11 +291,10 @@ export const register: Register = (on, options) => {
     if (e.requestId !== LANGUAGE_PANE) return next(e)
     const current = locale?.code ?? 'en'
     const { Box, Button } = $.ui.resolve(e)
-    const picked = (code: string) => {
-      void choose($, code, apply).then(async text => {
-        if (locale?.code === code) await $.ui.close({ id: LANGUAGE_PANE }).catch(() => undefined)
-        $.ui.log(text)
-      })
+    // A pick answers the dialog: close it with the press, then switch.
+    const picked = async (code: string) => {
+      await $.ui.close({ id: LANGUAGE_PANE }).catch(() => undefined)
+      $.ui.log(await choose($, code, apply))
     }
     return Box({
       flexDirection: 'column',

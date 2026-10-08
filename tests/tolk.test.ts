@@ -355,6 +355,32 @@ describe('/tolk', () => {
     expect(help.description).toBe('Hilfe und verfügbare Befehle anzeigen')
     await pane.unmount()
   })
+
+  test('a pick from the list closes it', { options: { language: 'en' } }, async ($, on) => {
+    const closed: string[] = []
+    on('config.set', ($, e) => ({ value: e.value }))
+    on('ui.close', ($, e, next) => {
+      closed.push(e.id)
+      return next(e)
+    })
+    const pane = await $.ui.mount({
+      plugin: 'tolk',
+      surface: 'terminal',
+      component: 'Pane',
+      requestId: 'tolk-language',
+      props: {
+        title: 'Available languages',
+        isFocused: true,
+        bodyColumns: 40,
+        placement: 'inline',
+        scroll: { offset: 0, bodyRows: 9 },
+        view: {},
+      },
+    })
+    await pane.press({ key: 'de' })
+    expect(closed).toEqual(['tolk-language'])
+    await pane.unmount()
+  })
 })
 
 describe('descriptions that change with the situation', () => {
