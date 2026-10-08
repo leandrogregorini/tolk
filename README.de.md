@@ -16,7 +16,7 @@ Claude *antwortet* schon in deiner Sprache. Tolk sorgt dafür, dass der Rest von
 
 | Sprache | Code | Befehle | Einstellungen | Von Muttersprachlern geprüft |
 | :- | :- | :-: | :-: | :-: |
-| Deutsch | `de` | ✅ | ✅ | gesucht |
+| Deutsch | `de` | ✅ | ✅ | ✅ |
 | Español | `es` | ✅ | ✅ | gesucht |
 | Français | `fr` | ✅ | ✅ | gesucht |
 | Italiano | `it` | ✅ | ✅ | gesucht |

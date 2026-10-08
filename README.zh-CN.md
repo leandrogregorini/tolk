@@ -16,7 +16,7 @@ Claude 本来就会用你的语言*回答*。Tolk 让 Claude Code 的其余部�
 
 | 语言 | 代码 | 命令 | 设置 | 母语者审校 |
 | :- | :- | :-: | :-: | :-: |
-| Deutsch | `de` | ✅ | ✅ | 招募中 |
+| Deutsch | `de` | ✅ | ✅ | ✅ |
 | Español | `es` | ✅ | ✅ | 招募中 |
 | Français | `fr` | ✅ | ✅ | 招募中 |
 | Italiano | `it` | ✅ | ✅ | 招募中 |
